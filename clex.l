@@ -22,7 +22,7 @@ Alpha [a-zA-Z]
 
 "true"|"false"  printf("This is boolen: %s\n",yytext);
 
-\".\"   printf("This is String:%s\n",yytext);
+\".*\"   printf("This is String:%s\n",yytext);
 
 Alpha*\(  printf("This is Function: %s\n",yytext);
 
