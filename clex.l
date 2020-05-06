@@ -14,9 +14,7 @@ Alpha [a-zA-Z]
 
 {Digit}+"."{Digit}* {return(FLOAT);}
 
-"+"|"-"|"*"|"/"   {return(Arithmatic Operator);}
-
-"<="|">="|"++"|"!="|"=="|"<"|">"   {return(Relational Operator);}
+"+"|"-"|"*"|"/"   {return(ArithmaticOperator);}
 
 ("int")|("if")|("else")|("while")|("do")|("break")|("continue")|("double")|("float")|("return")("return")|("char")|("case")|("sizeof")|("long")|("short")|("typedef")|("switch")|("void")|("static")|("struct")|("goto")|("main")   {return(Keyword);}
 
@@ -30,21 +28,21 @@ Alpha*\(  {return(Function);}
 
 \t|\r|\s|" "  {return(Blank);}
 
-"<="|">="|"++"|"!="|"=="|"<"|">"|"&&"|"||"|"!"  {return(Relational Operator);}
+"<="|">="|"++"|"!="|"=="|"<"|">"|"&&"|"||"|"!"  {return(RelationalOperator);}
 
-"="   {return(Assignment Operator);}
+"="   {return(AssignmentOperator);}
 
 ";"  {return(Semi);}
 
-"#"|"@"|"$"|"^"|"%"|"^"|"&"  {return(Special Characters);}
+"#include ".+  {return(Pre-processorDirective);}
 
-"#include ".+  {return(Pre-processor directive);}
+"#"|"@"|"$"|"^"|"%"|"^"|"&"  {return(SpecialCharacters);}
 
-"//".*" "*    {return(single line Commments);}
+"//".*" "*    {return(SingleLineCommments);}
 
-\/\*(.*\n)*.*\*\/    {return(multi line Comments);}
+\/\*(.*\n)*.*\*\/    {return(MultiLineComments);}
 
-.  {return("token: %s\n",yytext);}
+.  {return(InvalidToken);}
 %%
 
 
