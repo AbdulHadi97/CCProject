@@ -16,13 +16,13 @@ Alpha [a-zA-Z]
 
 "+"|"-"|"*"|"/"   {return(ArithmaticOperator);}
 
-("int")|("if")|("else")|("while")|("do")|("break")|("continue")|("double")|("float")|("return")("return")|("char")|("case")|("sizeof")|("long")|("short")|("typedef")|("switch")|("void")|("static")|("struct")|("goto")|("main")   {return(Keyword);}
+("if")|("else")|("while")|("do")|("break")|("continue")|("return")|("case")|("sizeof")|("typedef")|("switch")|("void")|("static")|("struct")|("goto")|("main")   {return(Keyword);}
+
+("int")|("double")|("float")|("char")|("long")|("short") {return(Type);}
 
 "true"|"false"  {return(Boolen);}
 
 \".*\"   {return(String);}
-
-Alpha*\(  {return(Function);}
 
 [a-zA-Z][a-zA-Z0-9"_"]*  {return(Identifier);}
 
