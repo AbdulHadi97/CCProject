@@ -24,7 +24,7 @@ Alpha [a-zA-Z]
 
 \".*\"   {return(String);}
 
-[a-zA-Z][a-zA-Z0-9"_"]*  {return(Identifier);}
+[a-zA-Z][a-zA-Z0-9"_"]*  {return(ID);}
 
 \t|\r|\s|" "  {return(Blank);}
 
