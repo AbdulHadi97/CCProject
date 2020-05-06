@@ -18,7 +18,7 @@ Alpha [a-zA-Z]
 
 ("if")|("else")|("while")|("do")|("break")|("continue")|("return")|("case")|("sizeof")|("typedef")|("switch")|("void")|("static")|("struct")|("goto")|("main")   {return(Keyword);}
 
-("int")|("double")|("float")|("char")|("long")|("short") {return(Type);}
+("int")|("float")|("char")|("string") {return(Type);}
 
 "true"|"false"  {return(Boolen);}
 
