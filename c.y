@@ -34,19 +34,8 @@ expression : INT
 | ID
 | '!' expression
 | '-' expression
-| expression '*'  expression
-| expression '/'  expression
-| expression  '%' expression
-| expression '+'  expression
-| expression  '-' expression
-| expression '<'  expression
-| expression  '>' expression
-| expression "<=" expression
-| expression ">=" expression
-| expression "==" expression
-| expression "!=" expression
-| expression "&&" expression
-| expression "||" expression
+| expression ArithmaticOperator  expression
+| expression RelationalOperator expression
 | parExp
 ;
 
