@@ -16,9 +16,9 @@ Alpha [a-zA-Z]
 
 "+"|"-"|"*"|"/"   {return(ArithmaticOperator);}
 
-("if")|("else")|("while")|("do")|("break")|("continue")|("return")|("case")|("sizeof")|("typedef")|("switch")|("void")|("static")|("struct")|("goto")|("main")   {return(Keyword);}
+("if")|("else")|("while")|("do")|("break")|("continue")|("return")|("case")|("sizeof")|("typedef")|("switch")|("void")|("static")|("struct")|("goto")|("main")   {return(keyword);}
 
-("int")|("float")|("char")|("string") {return(Type);}
+("int")|("float")|("char")|("string") {return(type);}
 
 "true"|"false"  {return(Boolen);}
 
@@ -34,7 +34,7 @@ Alpha [a-zA-Z]
 
 ";"  {return(Semi);}
 
-"#include ".+  {return(Pre-processorDirective);}
+"#include ".+  {return(PreprocessorDirective);}
 
 "#"|"@"|"$"|"^"|"%"|"^"|"&"  {return(SpecialCharacters);}
 
@@ -44,5 +44,4 @@ Alpha [a-zA-Z]
 
 .  {return(InvalidToken);}
 %%
-
 
